@@ -1,0 +1,12 @@
+.header {
+	background-color: #F4F4F2;
+	padding: 2rem;
+	border-bottom: 1px solid #DADBD5;
+}
+
+.header-title {
+	background-image: url(/images/20.png);
+	background-repeat: no-repeat;
+	padding-left: 3rem;
+	background-size: 25px 25px;
+}

@@ -1,0 +1,21 @@
+<% layout('layout') -%>
+
+<header>
+	<h1 class="">List</h1>
+</header>
+
+<section>
+
+	<button class="list-sort-by-name-descending">Sort by name descending</button>
+
+	<ol>
+		<li><a href="/product/alpha" data-pjax>Product Alpha</a></li>
+		<li><a href="/product/beta" data-pjax>Product Beta</a></li>
+		<li><a href="/product/gamma" data-pjax>Product Gamma</a></li>
+		<li><a href="/product/delta" data-pjax>Product Delta</a></li>
+		<li><a href="/product/epsilon">Product Epsilon (call without pjax)</a></li>
+	</ol>
+
+</section>
+
+<input type="hidden" value="<%= pageComponent %>" id="page-component">

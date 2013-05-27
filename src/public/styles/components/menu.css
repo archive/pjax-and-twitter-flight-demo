@@ -1,0 +1,17 @@
+.menu-items {
+	list-style-type: none;
+	overflow: hidden;
+	padding-left: 0;
+	font-size: 1.6rem;
+	margin-bottom: 0;
+}
+
+.menu-items li {
+	float: left;
+	padding-right: 1rem;
+	background-color: #fff;
+	border-radius: 0.6rem;
+	padding: 0.2rem 0.8rem;
+	text-align: center;
+	margin-right: 1rem;
+}
