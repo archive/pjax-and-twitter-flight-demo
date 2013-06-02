@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>PJAX & Twitter Flight</title>
+
+		<meta name="description" content="PJAX & Twitter Flight">
+		<meta name="author" content="Anders Jönsson, www.anders-jonsson.net, https://github.com/archive">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="libs/reveal/css/reveal.min.css">
+		<link rel="stylesheet" href="libs/reveal/css/theme/sky.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="libs/reveal/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="libs/reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="libs/reveal/lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+		<style type="text/css">
+			img {
+				border: 1px solid #D1D1D1 !important;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>PJAX & Twitter Flight</h1>
+					<h3>a true love story</h3>
+					<p>
+						<small>
+							<a href="http://www.anders-jonsson.net">By Anders Jönsson</a><br/>
+						</small>
+					</p>
+				</section>
+				<section>
+					<h2>Agenda</h2>
+					<ol>
+						<li>PJAX</li>
+						<li>Twitter Flight</li>
+						<li>Demo</li>
+						<li>Recap</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Slides & Code</h2>
+					<p><a href="https://github.com/archive/pjax-and-twitter-flight-demo">https://github.com/archive/pjax-and-twitter-flight-demo</a></p>
+					<br/>
+					<p>Feel free to ask questions at any point</p>
+				</section>
+
+				<section>
+					<h1>PJAX</h1>
+					<p><span style="text-decoration: underline;">p</span>ushState + a<span style="text-decoration: underline;">jax</span></p>
+				</section>
+
+				<section>
+					<h2>Overview</h2>
+				</section>
+
+				<section data-transition="none">
+					<p><img src="images/1.png"></p>
+				</section>
+
+				<section data-transition="none">
+					<p><img src="images/2.png"></p>
+				</section>
+
+				<section data-transition="none">
+					<p><img src="images/3.png"></p>
+				</section>
+
+				<section data-transition="none">
+					<p><img src="images/4.png"></p>
+				</section>
+
+				<section data-transition="none">
+					<p><img src="images/5.png"></p>
+				</section>
+
+				<section>
+					<h3>Sending HTML over the wire???</h3>
+					<br/>
+					<h3>Are you &#!*£@¤ insane?</h3>
+				</section>
+
+				<section>
+					<h2>Looking back</h2>
+					<small style="display:block;width:33%;float:left;padding-top: 170px;">Server rendering, multi page applications, e.g. ASP.NET MVC</small>
+					<small style="display:block;width:33%;float:left"><img src="images/pendulum.png"></small>
+					<small style="display:block;width:33%;float:left;padding-top: 170px;">Client rendering, single page applications, e.g. Backbone.js</small>
+					<small style="clear:both;display:block;padding:20px;">Some mix like PJAX</small>
+				</section>
+
+				<section>
+					<h3>Server size benefits</h3>
+					<ul style="width: 60%">
+						<li>Rendering output cache</li>
+						<li>Google indexing</li>
+						<li>Reduce battery consumptive</li>
+						<li>Reuse of existing team knowledge</li>
+						<li>Helps mobile devices</li>
+					</ul>
+
+					<br/>
+					<br/>
+
+					<h3>Client side benefits</h3>
+					<ul style="width: 60%">
+						<li>More responsive UI</li>
+						<li>Distributed rendering</li>
+						<li>All in JavaScript/HTML/CSS</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Reality check</h2>
+					<br/>
+					<h3>Twitter</h3>
+					<h3>BaseCamp</h3>
+				</section>
+
+				<section>
+					<h2>Graceful Degradation</h2>
+					<pre>
+
+
+                           yes -> PJAX
+                         /
+ JavaScript && pushState
+                         \
+                           no -> Ordinary Page Reload (aka blink death)
+
+					</pre>
+				</section>
+
+				<section>
+					<h2>Silver bullet?</h2>
+					<h2>It's a tool... one of many</h2>
+					<img src="images/toolbox.jpg">
+				</section>
+
+				<section>
+					<h1>Twitter Flight</h1>
+					<img src="images/flight.png">
+				</section>
+
+				<section>
+					<h3>A web framework</h3>
+					<h3>(client side JavaScript)</h3>
+					<h3>that is:</h3>
+					<p>
+						<ul>
+							<li>Event-driven</li>
+							<li>Component-based</li>
+							<li>Lightweight</li>
+							<li>Test/spec friendly</li>
+							<li>Mixins based, not inheritance</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<h2>The basics</h2>
+					<ol>
+						<li>Create a component</li>
+						<li>Attach it to a DOM node</li>
+						<li>Rock on!</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Some rules</h2>
+					<ol>
+						<li>The component should not understand which DOM-node it will be atatched to</li>
+						<li>Never communicate directly between componens, allways use pus/sub</li>
+						<li>Never touch anything outside the component</li>
+					</ol>
+				</section>
+
+				<section>
+					<h4>Create a component (header.js)</h4>
+					<pre><code data-trim contenteditable>
+return Flight.defineComponent(function Header () {
+	// Add some code :)
+});
+					</code></pre>
+					<br/>
+					<br/>
+					<h4>Attach it to a DOM node (app.js)</h4>
+					<pre><code data-trim contenteditable>
+Header.attachTo('.header');
+					</code></pre>
+				</section>
+
+			<section>
+					<h2>Pub / Sub</h2>
+					<br/>
+					<h4>Subscribe to events</h4>
+					<pre><code data-trim contenteditable>
+this.on(document, 'title:changed', this._update);
+					</code></pre>
+					<br/>
+					<br/>
+					<h4>Publish events</h4>
+					<pre><code data-trim contenteditable>
+var payload = { title: 'some title' };
+this.trigger('title:changed', payload);
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Reality check</h2>
+					<h4>Tweetdeck</h4>
+					<h4>Tradera</h4>
+				</section>
+
+				<section>
+					<h2>Some considerations</h2>
+					<ul>
+						<li>It's a young framework (first official beta: less than 5 months)</li>
+						<li>Right now it uses the DOM for event/message dispatching</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Code!</h1>
+					<h2>(aka demo)</h2>
+				</section>
+
+				<section>
+					<h1>Recap</h1>
+					<h3>PJAX</h3>
+					<h3>Flight</h3>
+				</section>
+
+				<section>
+					<h2>Thanks!</h2>
+					<h3>Questions?</h3>
+					<br/>
+					<br/>
+					<p>Find me at</p>
+					<ul>
+						<li>http://anders-jonsson.net/</li>
+						<li>https://twitter.com/anjonsson</li>
+						<li>https://github.com/archive</li>
+					</ul>
+					<br/>
+					<br/>
+					<br/>
+					<p>Images</p>
+					<ul style="width: 80%; overflow:hidden;">
+						<li>http://greatleadersserve.org/for-your-leadership-tool-box-6-x-6/</li>
+						<li>http://www.sparknotes.com/testprep/books/sat2/physics/chapter8section5.rhtml</li>
+					</ul>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="libs/reveal/lib/js/head.min.js"></script>
+		<script src="libs/reveal/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'libs/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'libs/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'libs/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'libs/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'libs/reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'libs/reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'libs/reveal/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'libs/reveal/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+			var items = document.getElementsByTagName('li');
+			Array.prototype.forEach.call(items, function (item) {
+				var html = item.innerHTML;
+				if (html.indexOf('http') != -1) {
+					item.innerHTML = html.link(html);
+				}
+			})
+
+		</script>
+
+	</body>
+</html>

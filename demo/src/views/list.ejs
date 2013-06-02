@@ -1,10 +1,9 @@
 <% layout('layout') -%>
 
-<header>
-	<h1 class="">List</h1>
-</header>
-
-<section>
+<article>
+	<header>
+		<h2>List</h2>
+	</header>
 
 	<button class="list-sort-by-name-descending">Sort by name descending</button>
 
@@ -16,6 +15,5 @@
 		<li><a href="/product/epsilon">Product Epsilon (call without pjax)</a></li>
 	</ol>
 
-</section>
-
-<input type="hidden" value="<%= pageComponent %>" id="page-component">
+	<input type="hidden" value="<%= pageComponent %>" id="page-component">
+</article>

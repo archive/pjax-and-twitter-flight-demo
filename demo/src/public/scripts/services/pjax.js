@@ -15,7 +15,7 @@ define([
 	return Flight.defineComponent(function Pjax () {
 
 		this.defaultAttrs({
-			pjaxEnabled: 'a[data-pjax]',
+			pjaxEnabledLinks: 'a[data-pjax]',
 			view: '.view'
 		});
 
@@ -68,23 +68,25 @@ define([
 			alert("error, set window.document.location.href to faild url");
 		};
 
+		this._handleStateChanged = function () {
+			var state = History.getState();
+			//console.log('statechange', state.data, state.title, state.url);
+
+			if (Object.keys(state.data).length === 0) {
+				// Change to replaceState
+				window.document.location.href = state.url;
+			}
+
+			this._updateView(state.data);
+		};
+
 		this.after('initialize', function() {
 			if (History.enabled) {
 				this.on('click', {
-					pjaxEnabled: this._pjaxGet
+					pjaxEnabledLinks: this._pjaxGet
 				});
 
-				History.Adapter.bind(window, 'statechange', function () {
-					var state = History.getState();
-					console.log('statechange', state.data, state.title, state.url);
-
-					if (Object.keys(state.data).length === 0) {
-						// Change to replaceState
-						window.document.location.href = state.url;
-					}
-
-					this._updateView(state.data);
-				}.bind(this));
+				History.Adapter.bind(window, 'statechange', this._handleStateChanged.bind(this));
 			}
 		});
 
