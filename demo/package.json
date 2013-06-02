@@ -1,13 +1,13 @@
 {
   "name": "pjax-and-twitter-flight-demo",
   "version": "0.0.0",
-  "description": "",
+  "description": "A simple demo of how you could use PJAX in a 'Twitter Flight'-based application",
   "main": "server.js",
   "dependencies": {
-    "express": "~3.2.5",
-    "ejs-locals": "~1.0.2"
-    "jshint": "*"
-    "csslint": "*"
+    "express": "3.x.x",
+    "ejs-locals": "1.x.x",
+    "jshint": "2.x.x",
+    "csslint": "0.9.x"
   },
   "devDependencies": {},
   "scripts": {
