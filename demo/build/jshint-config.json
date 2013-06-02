@@ -58,8 +58,7 @@
 		"console",
 		"define",
 		"$",
-		"alert",
-		"dataInitialState"
+		"alert"
 	],
 
 	// --------------------------
