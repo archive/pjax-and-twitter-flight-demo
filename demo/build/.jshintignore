@@ -1,0 +1,4 @@
+..\src\public\scripts\libs
+..\src\public\scripts\output
+..\src\public\scripts\requirejs-config.js
+..\src\public\scripts\requirejs-profile.js

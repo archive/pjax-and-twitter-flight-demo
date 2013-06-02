@@ -11,8 +11,9 @@ define([
 	History,
 	window
 ) {
+	'use strict';
 
-	return Flight.defineComponent(function Pjax () {
+	return Flight.defineComponent(function Pjax() {
 
 		this.defaultAttrs({
 			pjaxEnabledLinks: 'a[data-pjax]',
@@ -41,7 +42,7 @@ define([
 			};
 		};
 
-		this._handlePjaxDone = function(url, data) {
+		this._handlePjaxDone = function (url, data) {
 			History.pushState(data, data.title, url);
 		};
 
@@ -64,8 +65,10 @@ define([
 			});
 		};
 
-		this._handlePjaxFail = function(url, jqXHR, textStatus, errorThrown) {
-			alert("error, set window.document.location.href to faild url");
+		this._handlePjaxFail = function (url, jqXHR, textStatus, errorThrown) {
+			alert('error');
+			console.log(url, jqXHR, textStatus, errorThrown);
+			window.document.location.href = url;
 		};
 
 		this._handleStateChanged = function () {
@@ -80,7 +83,7 @@ define([
 			this._updateView(state.data);
 		};
 
-		this.after('initialize', function() {
+		this.after('initialize', function () {
 			if (History.enabled) {
 				this.on('click', {
 					pjaxEnabledLinks: this._pjaxGet

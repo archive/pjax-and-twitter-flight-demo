@@ -7,14 +7,15 @@ define([
 	$,
 	Flight
 ) {
+	'use strict';
 
-	return Flight.defineComponent(function Title () {
+	return Flight.defineComponent(function Title() {
 
 		this._update = function (evt, payload) {
 			document.title = payload.title;
 		};
 
-		this.after('initialize', function() {
+		this.after('initialize', function () {
 			this.on(document, 'title:changed', this._update);
 		});
 

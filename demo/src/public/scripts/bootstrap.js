@@ -7,13 +7,14 @@ define([
 	Breadcrumb,
 	Pjax
 ) {
+	'use strict';
 
 	var Bootstrap = function () {
 	};
 
 	var p = Bootstrap.prototype;
 
-	p.load = function(pageComponent) {
+	p.load = function (pageComponent) {
 		Header.attachTo('.header');
 		Breadcrumb.attachTo('.breadcrumb');
 

@@ -1,15 +1,17 @@
 {
   "name": "pjax-and-twitter-flight-demo",
   "version": "0.0.0",
-  "description": "ERROR: No README.md file found!",
+  "description": "",
   "main": "server.js",
   "dependencies": {
     "express": "~3.2.5",
     "ejs-locals": "~1.0.2"
+    "jshint": "*"
+    "csslint": "*"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
   "repository": {
     "type": "git",

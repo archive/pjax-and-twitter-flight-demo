@@ -7,18 +7,19 @@ define([
 	$,
 	Flight
 ) {
+	'use strict';
 
-	return Flight.defineComponent(function List () {
+	return Flight.defineComponent(function List() {
 
 		this.defaultAttrs({
 			sort: '.list-sort-by-name-descending'
 		});
 
-		this._sort = function (evt, bal) {
+		this._sort = function () {
 			alert('descending!');
 		};
 
-		this.after('initialize', function() {
+		this.after('initialize', function () {
 			this.on('click', {
 				sort: this._sort
 			});

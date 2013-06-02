@@ -7,8 +7,9 @@ define([
 	$,
 	Flight
 ) {
+	'use strict';
 
-	return Flight.defineComponent(function Breadcrumb () {
+	return Flight.defineComponent(function Breadcrumb() {
 
 		this.defaultAttrs({
 			text: '.breadcrumb-text'
@@ -18,7 +19,7 @@ define([
 			this.select('text').text(payload.breadcrumb);
 		};
 
-		this.after('initialize', function() {
+		this.after('initialize', function () {
 			this.on(document, 'breadcrumb:changed', this._update);
 		});
 

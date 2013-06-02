@@ -7,8 +7,9 @@ define([
 	$,
 	Flight
 ) {
+	'use strict';
 
-	return Flight.defineComponent(function Product () {
+	return Flight.defineComponent(function Product() {
 
 		// Add some code :)
 

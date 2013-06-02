@@ -9,13 +9,15 @@ require([
 	Flight,
 	Bootstrap
 ) {
+	'use strict';
+
 	if (!$ || !_ || !Flight || !Bootstrap) {
 		throw 'error: missing primary dependencies';
 	}
 
 	require.config({ baseUrl: '/scripts/' });
 
-	var bootstrap = new Bootstrap;
+	var bootstrap = new Bootstrap();
 	var pageComponent = $('#page-component').val();
 	bootstrap.load(pageComponent);
 
