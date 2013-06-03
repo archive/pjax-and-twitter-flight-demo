@@ -176,6 +176,7 @@
 							<li>Lightweight</li>
 							<li>Test/spec friendly</li>
 							<li>Mixins based, not inheritance</li>
+							<li>AOP influenced</li>
 						</ul>
 					</p>
 				</section>
@@ -213,7 +214,7 @@ Header.attachTo('.header');
 					</code></pre>
 				</section>
 
-			<section>
+				<section>
 					<h2>Pub / Sub</h2>
 					<br/>
 					<h4>Subscribe to events</h4>
@@ -227,6 +228,37 @@ this.on(document, 'title:changed', this._update);
 var payload = { title: 'some title' };
 this.trigger('title:changed', payload);
 					</code></pre>
+				</section>
+
+				<section>
+					<h4>DOM events</h4>
+					<pre><code data-trim contenteditable>
+this.defaultAttrs({
+	searchButton: '.search-action'
+});
+
+this.after('initialize', function () {
+	this.on('click', {
+		searchButton: this._search
+	});
+});
+					</code></pre>
+					<p><small>* Delegation by default</small></p>
+				</section>
+
+				<section>
+					<h4>Reading DOM values</h4>
+					<pre><code data-trim contenteditable>
+this.defaultAttrs({
+	searchText: '.search-text'
+});
+
+this._search = function () {
+	var value = this.select('searchText').val();
+	alert('search on ' + value);
+};
+					</code></pre>
+					<p><small>* this.select = component context</small></p>
 				</section>
 
 				<section>
