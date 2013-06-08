@@ -10,7 +10,6 @@
     "csslint": "0.9.x",
     "requirejs": "2.x.x"
   },
-  "devDependencies": {},
   "scripts": {
     "test": ""
   },
@@ -18,5 +17,9 @@
     "type": "git",
     "url": "https://github.com/archive/pjax-and-twitter-flight-demo.git"
   },
-  "author": "Anders Jönsson"
+  "author": "Anders Jönsson",
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  }
 }
